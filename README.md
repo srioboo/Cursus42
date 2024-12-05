@@ -1,3 +1,3 @@
 # Cursus42
 
-42 Cursus
+Exercices for 42 Cursus
