@@ -6,34 +6,38 @@
 /*   By: srioboo- <srioboo-@student.42malaga.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 08:43:54 by srioboo-          #+#    #+#             */
-/*   Updated: 2024/12/04 11:37:57 by srioboo-         ###   ########.fr       */
+/*   Updated: 2024/12/06 08:56:15 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-int	ft_isalpha(int num);
-int	ft_isdigit(int num);
-int	ft_isalnum(int num);
-int	ft_isascii(int num);
-int	ft_isprint(int num);
-int	ft_tolower(int num);
-int	ft_toupper(int num);
-unsigned long	ft_strlen(char *str);
-char *ft_strchr(const char *s, int c);
+int				ft_isalpha(int num);
+int				ft_isdigit(int num);
+int				ft_isalnum(int num);
+int				ft_isascii(int num);
+int				ft_isprint(int num);
+int				ft_tolower(int num);
+int				ft_toupper(int num);
+size_t			ft_strlen(const char *str);
+char			*ft_strchr(const char *s, int c);
+size_t			ft_strlcpy(char *dst, const char *src, size_t size);
+char			*ft_strnstr(const char *big, const char *little, size_t len);
 
-// int ft_atoi();
-// int ft_memchr();
-// int ft_memcpy();
-// int ft_memset();
-// int ft_strlcpy();
-// int ft_strnstr();
-// int ft_bzero();
-// int ft_memcmp();
-// int ft_memmove();
-int ft_strlcat(int num);
-// int ft_strncmp();
-// int ft_strrchr();
+int				ft_strncmp(const char *s1, const char *s2, size_t n);
+
+// TODO - implement block
+size_t			ft_strlcat(char *dst, const char *src, size_t size);
+char			*ft_strrchr(const char *s, int c);
+
+// TODO - implement block
+int				ft_atoi(const char *nptr);
+void			*ft_memchr(const void *s, int c, size_t n);
+void			*ft_memcpy(void *dest, const void *src, size_t n);
+void			*ft_memset(void *s, int c, size_t n);
+void			ft_bzero(void *s, size_t n);
+int				ft_memcmp(const void *s1, const void *s2, size_t n);
+void			*ft_memmove(void *dest, const void *src, size_t n);
 
 #endif

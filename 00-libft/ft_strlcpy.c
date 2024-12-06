@@ -10,9 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// TODO - completar
+#include <sys/types.h>
 
-int	ft_strlcpy(int num)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	return (num);
+	size_t	src_size;
+	size_t	aux;
+
+	src_size = 0;
+	while (src[src_size] != '\0')
+		src_size++;
+	aux = 0;
+	while (src[aux] != '\0' && aux < (size - 1))
+	{
+		dst[aux] = src[aux];
+		aux++;
+	}
+	dst[aux] = '\0';
+	return (src_size);
 }

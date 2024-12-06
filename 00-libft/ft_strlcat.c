@@ -11,8 +11,13 @@
 /* ************************************************************************** */
 
 // TODO - completar
+#include <stdio.h>
 
-int	ft_strlcat(int num)
+
+#include <sys/types.h>
+
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	return (num);
+	printf("%s | %s | %zu\n", dst, src, size);
+	return (0);
 }
