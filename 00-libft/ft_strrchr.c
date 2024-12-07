@@ -10,9 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// TODO - completar
+#include <string.h>
 
-int	ft_strrchr(int num)
+char	*ft_strrchr(const char *srt, int c)
 {
-	return (num);
+	while (*srt != '\0')
+	{
+		if (srt[0] == c)
+			return ((char *)srt);
+		srt++;
+	}
+	return (NULL);
 }

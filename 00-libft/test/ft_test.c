@@ -6,7 +6,7 @@
 
 void	test_ft_test(void)
 {
-	const char	*method_name = "test_ft_strnstr";
+	const char	*method_name = "test_ft_test";
 
 	printf("==== TEST: %s ====\n", method_name);
 	printf("--- orig ---\n");
@@ -17,16 +17,16 @@ void	test_ft_test(void)
 void	test_ft_strnstr(void)
 {
 	const char	*method_name = "test_ft_strnstr";
-	const char	*str = "Esta es la cadena a testear";
-	const char	*find = "la cadena";
+	const char	*str = "Foo Bar Baz";
+	const char	*find = "Bar";
+	size_t		len = 4;
 	char		*prt;
 
 	printf("==== TEST: %s ====\n", method_name);
 	printf("--- orig ---\n");
-	// prt = strnstr(str, find, 3);
-	// printf("%s\n", prt);
+	// TODO - strnstr(str, find, len);
 	printf("--- new ---\n");
-	prt = ft_strnstr(str, find, 3);
+	prt = ft_strnstr(str, find, len);
 	printf("%s\n", prt);
 	printf("==== OK: %s ====\n\n", method_name);
 }
@@ -66,5 +66,19 @@ void	test_ft_strlcat(void)
 	printf("--- new ---\n");
 	printf("%lu: %s %s\n", ft_strlcat(dst, src, 5), dst, src);
 	// printf("%lu: %s %s\n", ft_strlcat(dst, src, 7), dst, src);
+	printf("==== OK: %s ====\n\n", method_name);
+}
+
+void	test_ft_strrchr(void)
+{
+	const char	*method_name = "test_ft_strrchr";
+	const char	*s1 = "hola mundo";
+	int			c = 97;
+
+	printf("==== TEST: %s ====\n", method_name);
+	printf("--- orig ---\n");
+	printf("%s\n", strrchr(s1, c));
+	printf("--- new ---\n");
+	printf("%s\n", ft_strrchr(s1, c));
 	printf("==== OK: %s ====\n\n", method_name);
 }
