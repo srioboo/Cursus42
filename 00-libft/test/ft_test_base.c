@@ -28,12 +28,12 @@ void	test_ft_isalpha(void)
 void	test_ft_atoi(void)
 {
 	const char	*method_name = "test_ft_atoi";
-	const char	*nptr = "--45623a";
+	const char	*nptr = "-45623a";
 
 	fun_start(method_name);
 	printf("--- orig ---\n");
 	printf("%d\n", atoi(nptr));
 	printf("--- new ---\n");
-	// TODO - printf("%d\n", ft_atoi(nptr));
+	printf("%d\n", ft_atoi(nptr));
 	fun_end(method_name);
 }
