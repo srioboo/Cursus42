@@ -18,7 +18,8 @@ clean:
 	rm -f $(OFILES)
 
 # For testing
-CFILEST= test/ft_test.c test/test-suite.c
+CFILEST= test/ft_test_base.c test/ft_test_str.c \
+		test/ft_test_mem.c test/test-suite.c
 
 test: all
 	cp $(NAME) test
