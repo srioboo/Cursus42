@@ -12,8 +12,6 @@
 
 // TODO - completar
 #include <stdio.h>
-
-
 #include <sys/types.h>
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
