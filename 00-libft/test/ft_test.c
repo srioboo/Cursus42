@@ -11,7 +11,7 @@ void	test_ft_test(void)
 	printf("==== TEST: %s ====\n", method_name);
 	printf("--- orig ---\n");
 	printf("--- new ---\n");
-	printf("==== OK: %s ====\n", method_name);
+	printf("==== OK: %s ====\n\n", method_name);
 }
 
 void	test_ft_strnstr(void)
@@ -28,7 +28,7 @@ void	test_ft_strnstr(void)
 	printf("--- new ---\n");
 	prt = ft_strnstr(str, find, 3);
 	printf("%s\n", prt);
-	printf("==== OK: %s ====\n", method_name);
+	printf("==== OK: %s ====\n\n", method_name);
 }
 
 void	test_ft_strncmp(void)
@@ -50,5 +50,21 @@ void	test_ft_strncmp(void)
 	printf("%d\n", ft_strncmp(s1, s3, 6));
 	printf("%d\n", ft_strncmp(s1, s4, 6));
 	printf("%d\n", ft_strncmp(s1, s4, 2));
-	printf("==== OK: %s ====\n", method_name);
+	printf("==== OK: %s ====\n\n", method_name);
+}
+
+void	test_ft_strlcat(void)
+{
+	const char	*method_name = "test_ft_strlcat";
+	char		*dst = "ABCDE";
+	const char	*src = "ADCDEF";
+
+	printf("==== TEST: %s ====\n", method_name);
+	printf("--- orig ---\n");
+	printf("%lu: %s %s\n", strlcat(dst, src, 5), dst, src);
+	// printf("%lu: %s %s\n",strlcat(dst, src, 7), dst, src);
+	printf("--- new ---\n");
+	printf("%lu: %s %s\n", ft_strlcat(dst, src, 5), dst, src);
+	// printf("%lu: %s %s\n", ft_strlcat(dst, src, 7), dst, src);
+	printf("==== OK: %s ====\n\n", method_name);
 }

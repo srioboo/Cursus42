@@ -10,12 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// TODO - completar
-#include <stdio.h>
 #include <sys/types.h>
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	printf("%s | %s | %zu\n", dst, src, size);
-	return (0);
+	size_t	dst_size;
+	size_t	src_size;
+
+	dst_size = 0;
+	src_size = 0;
+	while (dst[dst_size] && (dst_size < size))
+		dst_size++;
+	while (src[src_size])
+		src_size++;
+	return (dst_size + src_size);
 }
