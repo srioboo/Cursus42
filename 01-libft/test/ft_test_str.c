@@ -56,12 +56,13 @@ void	test_ft_strlcpy(void)
 	printf("original dst: %s (%zu)\n", destination, ft_strlen(destination));
 	printf("new: %zu\n", ft_strlcpy(dst, src, size));
 	printf("new dst:  %s (%zu)\n", dst, ft_strlen(dst));
+	printf("orig: %zu\n", strlcpy(dst, "aaa", 0));
+	printf("new: %zu\n", ft_strlcpy(dst, "aaa", 0));
 	fun_end(method_name);
 }
 
 void	test_ft_strnstr(void)
 {
-	const char	*method_name = "test_ft_strnstr";
 	const char	*method_name = "test_ft_strnstr";
 	const char	*str = "Foo Bar Baz";
 	const char	*find = "Bar";
