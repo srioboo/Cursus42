@@ -61,30 +61,28 @@ void	test_ft_strnstr(void)
 	const char	*str = "Foo Bar Baz";
 	const char	*find = "Bar";
 	const char	*find2 = "Baz";
-
+	const char	*find3 = ""; 
 	fun_start(method_name);
 	printf("--- orig\n");
 	printf("%s\n", strnstr(str, find , 5));
 	printf("%s\n", strnstr(str, find , 11));
 	printf("%s\n", strnstr(str, find , 26));
-
 	printf("--- new\n");
 	printf("%s\n", ft_strnstr(str, find , 5));
 	printf("%s\n", ft_strnstr(str, find , 11));
 	printf("%s\n", ft_strnstr(str, find , 26));
-
 	printf("--- orig test2\n");
 	printf("%s\n", strnstr(str, find2 , 5));
 	printf("%s\n", strnstr(str, find2 , 11));
 	printf("%s\n", strnstr(str, find2 , 26));
-
 	printf("--- new test2\n");
 	printf("%s\n", ft_strnstr(str, find2 , 5));
 	printf("%s\n", ft_strnstr(str, find2 , 11));
 	printf("%s\n", ft_strnstr(str, find2 , 26));
-
-
-
+	printf("--- orig test3\n");
+	printf("%s\n", strnstr(str, find3 , 5));
+	printf("--- new test3\n");
+	printf("%s\n", ft_strnstr(str, find3 , 5));
 	fun_end(method_name);
 }
 

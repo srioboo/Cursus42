@@ -10,41 +10,29 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// TODO - reducir size
+// FIXME - fix case
 #include <string.h>
 
-#include <stdio.h>
-
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 {
-	size_t	little_size;
-	size_t	i;
-	size_t	j;
-	char	*aux;
+	char	*str_aux;
+	char	*find;
+	size_t	count;
 
-	aux = (char *)big;
-	little_size = 0;
-	while (little[little_size] != '\0')
-		little_size++;
-	i = 0;
-	j = 0;
-	while (big[i] && (i < len))
+	count = 1;
+	while (*str != '\0' && count <= len)
 	{
-		// int t = 0;
-		while (little[j] && little[j] == big[i + j])
+		str_aux = (char *)str;
+		find = (char *)to_find;
+		while (*str_aux && *find && *str_aux == *find)
 		{
-			if (little_size == (j + 1) && ((i + j) < len))
-				return ((char *)aux);
-			else
-				aux++;
-			j++;
-			aux++;
+			str_aux++;
+			find++;
 		}
-		//if (t != 0)
-		//	aux++;
-		// printf("sale bucle\n");
-		// aux++;
-		i++;
+		if (*find == 0)
+			return ((char *)str);
+		count++;
+		str++;
 	}
 	return (NULL);
 }
