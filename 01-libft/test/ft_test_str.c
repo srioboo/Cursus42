@@ -14,20 +14,77 @@ static void fun_end(const char *method_name)
 	printf("\n==== OK: %s ====\n", method_name);
 }
 
+void	test_ft_strlen(void)
+{
+	char	test[11] = "hola mundo";
+	unsigned long	orig;
+	unsigned long	new;
+
+	orig = strlen(test);
+	new = ft_strlen(test);
+	printf("=== TEST: ft_strlen\n");
+	printf("La cadena: [%s] tiene una longitud de: %lu\n", test, orig);
+	printf("La cadena: [%s] tiene una longitud de: %lu\n", test, new);
+	assert(orig == new);
+	printf("=== TEST: ft_strlen\n\n");
+}
+
+void	test_ft_strchr(void)
+{
+	int	letter = 't';
+	char	*str = "hola mundo\0";
+
+	printf("=== TEST: ft_strchr\n");
+	printf("original: %s\n", strchr(str, letter));
+	printf("new:      %s\n", ft_strchr(str, letter));
+	printf("=== OK: ft_strchr\n\n");
+}
+
+void	test_ft_strlcpy(void)
+{
+	printf("=== TEST: ft_strlcpy\n");
+	char source[26] = 	   "This is the source string";
+	char destination[35] = "And this is the destination string";
+	size_t size = 6;
+	printf("original: %zu\n", strlcpy(destination, source, size));
+	printf("original dst: %s (%zu)\n",  destination, ft_strlen(destination));
+	char src[26] = "This is the source string";
+	char dst[35] = "And this is the destination string";
+	printf("new: %zu\n", ft_strlcpy(dst, src, size));
+	printf("new dst:  %s (%zu)\n", dst, ft_strlen(dst));
+	printf("=== OK: ft_strlcpy\n\n");
+}
+
 void	test_ft_strnstr(void)
 {
 	const char	*method_name = "test_ft_strnstr";
 	const char	*str = "Foo Bar Baz";
 	const char	*find = "Bar";
-	size_t		len = 4;
-	char		*prt;
+	const char	*find2 = "Baz";
 
 	fun_start(method_name);
-	printf("--- orig ---\n");
-	// TODO - strnstr(str, find, len);
-	printf("\n--- new ---\n");
-	prt = ft_strnstr(str, find, len);
-	printf("%s", prt);
+	printf("--- orig\n");
+	printf("%s\n", strnstr(str, find , 5));
+	printf("%s\n", strnstr(str, find , 11));
+	printf("%s\n", strnstr(str, find , 26));
+
+	printf("--- new\n");
+	printf("%s\n", ft_strnstr(str, find , 5));
+	printf("%s\n", ft_strnstr(str, find , 11));
+	printf("%s\n", ft_strnstr(str, find , 26));
+
+	printf("--- orig test2\n");
+	printf("%s\n", strnstr(str, find2 , 5));
+	printf("%s\n", strnstr(str, find2 , 11));
+	printf("%s\n", strnstr(str, find2 , 26));
+
+	printf("--- new test2\n");
+	printf("%s\n", ft_strnstr(str, find2 , 5));
+	printf("%s\n", ft_strnstr(str, find2 , 11));
+	printf("%s\n", ft_strnstr(str, find2 , 26));
+
+
+
 	fun_end(method_name);
 }
 
@@ -49,7 +106,7 @@ void	test_ft_strncmp(void)
 	printf("%d, ", ft_strncmp(s1, s2, 6));
 	printf("%d, ", ft_strncmp(s1, s3, 6));
 	printf("%d, ", ft_strncmp(s1, s4, 6));
-	printf("%d", ft_strncmp(s1, s4, 2));
+	printf("%d ", ft_strncmp(s1, s4, 2));
 	fun_end(method_name);
 }
 

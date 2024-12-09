@@ -13,13 +13,12 @@
 // TODO - reducir size
 #include <string.h>
 
-#include <stdio.h>
-
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	little_size;
 	size_t	i;
 	size_t	j;
+	size_t	t;
 	char	*aux;
 
 	aux = (char *)big;
@@ -30,20 +29,22 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	j = 0;
 	while (big[i] && (i < len))
 	{
-		// int t = 0;
-		while (little[j] && little[j] == big[i + j])
+		t = 0;
+		while (little[j] && t == 0)
 		{
-			if (little_size == (j + 1) && ((i + j) < len))
-				return ((char *)aux);
+			if ((little_size >= (j + 1)) && little[j] == big[i + j])
+			{
+				if (little_size == (j + 1) && ((i + j) < len))
+					return ((char *)aux);
+				j++;
+			}
 			else
+			{
+				j = 0;
+				t = 1;
 				aux++;
-			j++;
-			aux++;
+			}
 		}
-		//if (t != 0)
-		//	aux++;
-		// printf("sale bucle\n");
-		// aux++;
 		i++;
 	}
 	return (NULL);
