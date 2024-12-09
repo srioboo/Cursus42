@@ -1,42 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: srioboo- <srioboo-@student.42malaga.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/04 09:27:08 by srioboo-          #+#    #+#             */
-/*   Updated: 2024/12/04 09:27:28 by srioboo-         ###   ########.fr       */
+/*   Created: 2024/12/09 17:59:49 by srioboo-          #+#    #+#             */
+/*   Updated: 2024/12/09 18:00:04 by srioboo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// TODO - completar
-#include <sys/types.h>
-
-#include <stdio.h>
-
-void *ft_memset(void *s, int c, size_t n)
-{
-	size_t count;
-
-	printf("ENtrando en el metodo");
-
-	count = 0;
-	while (count < n)
-	{
-		//printf("ENtrando en el metodo");
-		s = &c;
-		s = s + sizeof(int);
-		//s++;
-		count++;
-	}
-
-	/*char *base2 = s;
-	count = 0;
-	while (base2[count])
-	{
-		printf("%c", base2[count]);
-	}*/
-
-	return (s);
-}
+// TODO
+// char *ft_strjoin(char const *s1, char const *s2);
