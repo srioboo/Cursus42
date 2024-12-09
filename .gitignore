@@ -50,3 +50,13 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# Ignore vscode
+.vscode
+
+# Ignore .gitignore
+# .gitignore
+
+# ignore test file
+# test/
+# MakefileTest
