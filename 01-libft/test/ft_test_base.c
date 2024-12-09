@@ -20,7 +20,7 @@ static void	fun_end(const char *method_name)
 void	test_ft_isdigit(void)
 {
 	const char	*method_name = "test_ft_isdigit";
-	int	test;
+	int			test;
 
 	fun_start(method_name);
 	test = 48;
@@ -41,7 +41,7 @@ void	test_ft_isdigit(void)
 void	test_ft_isalpha(void)
 {
 	const char	*method_name = "test_ft_isalpha";
-	int	test;
+	int			test;
 
 	fun_start(method_name);
 	test = 65;
@@ -78,7 +78,7 @@ void	test_ft_isalnum(void)
 void	test_ft_isascci(void)
 {
 	const char	*method_name = "test_ft_isascci";
-	int	test;
+	int			test;
 
 	fun_start(method_name);
 	test = -1;
@@ -99,7 +99,7 @@ void	test_ft_isascci(void)
 void	test_ft_isprint(void)
 {
 	const char	*method_name = "test_ft_isprint";
-	int	test;
+	int			test;
 
 	fun_start(method_name);
 	test = 0;
@@ -120,7 +120,7 @@ void	test_ft_isprint(void)
 void	test_ft_toupper(void)
 {
 	const char	*method_name = "test_ft_toupper";
-	int	test;
+	int			test;
 
 	fun_start(method_name);
 	test = 97;
@@ -135,7 +135,7 @@ void	test_ft_toupper(void)
 void	test_ft_tolower(void)
 {
 	const char	*method_name = "test_ft_tolower";
-	int	test;
+	int			test;
 
 	fun_start(method_name);
 	test = 65;

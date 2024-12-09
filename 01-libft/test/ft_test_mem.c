@@ -18,7 +18,6 @@
 static int rslt;
 */
 
-
 static void	fun_start(const char *method_name)
 {
 	printf("\n==== TEST: %s ====\n", method_name);
@@ -53,6 +52,7 @@ int	test_ft_memset(void)
 		// assert(base[i] != 0);
 		i++;
 	};
+
 	free(ptr);
 	printf("\n--- new ---\n");
 	memset(ptr2, 1, len);
@@ -64,6 +64,7 @@ int	test_ft_memset(void)
 		// assert(base[i] != 0);
 		i++;
 	};
+	
 	free(ptr2);
 	fun_end(method_name);
 	return (0);
