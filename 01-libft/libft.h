@@ -13,7 +13,7 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
-#include <sys/types.h>
+# include <sys/types.h>
 
 int				ft_isalpha(int num);
 int				ft_isdigit(int num);
