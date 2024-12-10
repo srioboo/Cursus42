@@ -6,8 +6,6 @@
 void	test_ft_strlen(void)
 {
 	const char		*method_name = "test_ft_strlen";
-	unsigned long	orig;
-	unsigned long	new;
 
 	fun_start(method_name);
 	printf("--- orig: %s (%lu)\n", "hola mundo", strlen("hola mundo"));
@@ -20,15 +18,15 @@ void	test_ft_strchr(void)
 	const char		*method_name = "test_ft_strchr";
 
 	fun_start(method_name);
-	printf("--- orig: %s\n", strchr("hola mundo\0", 't'));
-	printf("---  new: %s\n", ft_strchr("hola mundo\0", 't'));
-	printf("=== Test1 \n");
+	// printf("--- orig: %s\n", strchr("hola mundo", 't'));
+	printf("---  new: %s\n", ft_strchr("hola mundo", 't'));
+	fun_test_header(1);
 	printf("--- orig: %s\n", strchr("teste", 't'));
 	printf("---  new: %s\n", ft_strchr("teste", 't'));
-	printf("=== Test2 \n");
+	fun_test_header(2);
 	printf("--- orig: %s\n", strchr("teste", 'e'));
 	printf("---  new: %s\n", ft_strchr("teste", 'e'));
-	printf("=== Test3 \n");
+	fun_test_header(3);
 	printf("--- orig: %s\n", strchr("teste", '\0'));
 	printf("---  new: %s\n", ft_strchr("teste", '\0'));
 	fun_end(method_name);

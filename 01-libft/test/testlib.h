@@ -20,5 +20,6 @@
 
 void	fun_start(const char *method_name);
 void	fun_end(const char *method_name);
+void	fun_test_header(int num);
 
 #endif
