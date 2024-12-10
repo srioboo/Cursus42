@@ -1,21 +1,6 @@
-#include <stdio.h>
-#include <bsd/string.h>
-#include <string.h>
 #include "../libft.h"
-#include <assert.h>
-#include <stdlib.h>
-#include <limits.h>
+#include "testlib.h"
 #include <ctype.h>
-
-static void	fun_start(const char *method_name)
-{
-	printf("\n==== TEST: %s ====\n", method_name);
-}
-
-static void	fun_end(const char *method_name)
-{
-	printf("\n==== OK: %s ====\n", method_name);
-}
 
 void	test_ft_isdigit(void)
 {

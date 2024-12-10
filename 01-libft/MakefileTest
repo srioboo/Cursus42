@@ -20,8 +20,11 @@ clean:
 # For testing
 CFILEST= test/ft_test_atoi.c test/ft_test_mem.c \
 		test/ft_test_type.c test/ft_test_change_case.c \
-		test/ft_test_str.c test/test-suite.c
+		test/ft_test_str.c test/test_utils.c test/test-suite.c
 
 test: all
 	cp $(NAME) test
 	$(CC) $(CFLAGS) -lbsd $(CFILEST) $(NAME) -o test/main-test.o && ./test/main-test.o 
+
+cleant:
+	rm test/libft.a test/*.o
