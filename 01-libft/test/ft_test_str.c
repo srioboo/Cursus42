@@ -106,12 +106,22 @@ void	test_ft_strncmp(void)
 void	test_ft_strlcat(void)
 {
 	const char	*method_name = "test_ft_strlcat";
+	size_t	size = 6;
+	char *dest = "pqrstuvwxyz";
+	char *dest1 = "pqrstuvwxyz";
+	char *src = "abcd";
+	char *src1 = "abcd";
+	// size_t	size = 5;
+	// char *dest = "pqrs";
+	// char *dest1 = "pqrs";
+	// char *src = "abcdefghi";
+	// char *src1 = "abcdfghi";
 
 	fun_start(method_name);
-	printf("--- orig: %lu: %s %s\n", strlcat("ABCDE", "ADCDEF", 5), "ABCDE", "ADCDEF");
-	// printf("%lu: %s %s\n",strlcat("ABCDE", "ADCDEF", 7), "ABCDE", "ADCDEF");
-	printf("---  new: %lu: %s %s\n", ft_strlcat("ABCDE", "ADCDEF", 5), "ABCDE", "ADCDEF");
-	// printf("%lu: %s %s\n", ft_strlcat("ABCDE", src, 7), "ABCDE", src);
+	printf("--- orig: %s %s %lu\n", src, dest, ft_strlcat(dest, src, size));
+	printf("result: %p %s\n", dest, dest);
+	printf("---  new: %s %s %lu\n", src1, dest1, strlcat(dest1, src1, size));
+	printf("result: %p %s\n", dest1, dest1);
 	fun_end(method_name);
 }
 
