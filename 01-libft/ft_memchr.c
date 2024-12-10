@@ -10,27 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// TODO - completar
-
-// void *ft_memchr(const void *s, int c, size_t n)
-int	ft_memchr(int c)
-{
-	return (c);
-}
-
-/*
-#include <stdio.h>
 #include <string.h>
- 
-int main()
+
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-   char cadena[] = "Erase una vez...";
-   char *puntero; 
- 
-   puntero = (char *)memchr( cadena, 'a', 5 );
-   printf( "%s\n", cadena); 
-   printf( "%s\n", puntero ); 
- 
-   return (0);
+	unsigned int	i;
+	char			*dest;
+
+	dest = (char *)s;
+	i = 0;
+	while ((i < n) && *dest != '\0')
+	{
+		if (*dest == c)
+			return ((char *)dest);
+		dest++;
+		i++;
+	}
+	return (NULL);
 }
-*/
