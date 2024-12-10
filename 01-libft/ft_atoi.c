@@ -21,6 +21,8 @@ int	ft_atoi(const char *cton)
 	i = 0;
 	while (cton[i] > 0 && cton[i] <= 32)
 		i++;
+	if (cton[i] == '+' || cton[i] == '0')
+		return (0);
 	if (cton[i] == '-')
 	{
 		sign = -1;
