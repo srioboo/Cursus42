@@ -28,6 +28,41 @@ static void	fun_end(const char *method_name)
 	printf("\n==== OK: %s ====\n", method_name);
 }
 
+void	test_ft_memmove(void)
+{
+	const char	*method_name = "test_ft_memmove";
+	void		*dest0[10];
+	void		*dest1[10];
+
+	fun_start(method_name);
+	// char *orig = memmove(dest0, "123456", 4);
+	// printf("--- orig: %s\n", orig);
+	// char *new = ft_memmove(dest1, "123456", 4);
+	// printf("---  new: %s\n", new);
+	char *orig1 = memmove(dest0 + 2, "123456", 4);
+	printf("--- orig: %s\n", orig1);
+	char *new1 = ft_memmove(dest1 + 1, "123456", 4);
+	printf("---  new: %s\n", new1);
+	fun_end(method_name);
+}
+
+void	test_ft_bzero(void)
+{
+	const char	*method_name = "test_ft_bzero";
+	size_t		len = 10;
+	void		*ptr = malloc(len);
+	char		*test;
+
+	test = (char *)ptr;
+	fun_start(method_name);
+	printf("--- orig :\n");
+	bzero(ptr, len);
+	printf("---  new :\n");
+	ft_bzero(ptr, len);
+	printf("%s", test);
+	fun_end(method_name);
+}
+
 int	test_ft_memset(void)
 {
 	const char	*method_name = "test_ft_memset";
