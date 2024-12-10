@@ -20,6 +20,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	src_size = 0;
 	while (src[src_size] != '\0')
 		src_size++;
+	if (size == 0)
+		return (src_size);
 	aux = 0;
 	while (src[aux] != '\0' && aux < (size - 1))
 	{

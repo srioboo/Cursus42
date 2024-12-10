@@ -35,15 +35,14 @@ void	test_ft_strchr(void)
 void	test_ft_strlcpy(void)
 {
 	const char		*method_name = "test_ft_strlcpy";
-	char			source[26] = "This is the source string";
-	char			destination[35] = "And this is the destination string";
-	size_t			size = 6;
+	size_t			size;
 	char			src[26] = "This is the source string";
 	char			dst[35] = "And this is the destination string";
 
+	size = 6;
 	fun_start(method_name);
-	printf("--- orig: %zu -- %s (%zu)\n", strlcpy(destination, source, size),
-		destination, strlen(destination));
+	printf("--- orig: %zu -- %s (%zu)\n", strlcpy(dst, src, size),
+		dst, strlen(dst));
 	printf("---  new: %zu -- %s (%zu)\n", ft_strlcpy(dst, src, size),
 		dst, ft_strlen(dst));
 	printf("--- orig: %zu -- %s (%zu)\n", strlcpy(dst, "aaa", 0),
@@ -109,11 +108,9 @@ void	test_ft_strlcat(void)
 	const char	*method_name = "test_ft_strlcat";
 
 	fun_start(method_name);
-	printf("--- orig ---\n");
-	printf("%lu: %s %s", strlcat("ABCDE", "ADCDEF", 5), "ABCDE", "ADCDEF");
+	printf("--- orig: %lu: %s %s\n", strlcat("ABCDE", "ADCDEF", 5), "ABCDE", "ADCDEF");
 	// printf("%lu: %s %s\n",strlcat("ABCDE", "ADCDEF", 7), "ABCDE", "ADCDEF");
-	printf("\n--- new ---\n");
-	printf("%lu: %s %s", ft_strlcat("ABCDE", "ADCDEF", 5), "ABCDE", "ADCDEF");
+	printf("---  new: %lu: %s %s\n", ft_strlcat("ABCDE", "ADCDEF", 5), "ABCDE", "ADCDEF");
 	// printf("%lu: %s %s\n", ft_strlcat("ABCDE", src, 7), "ABCDE", src);
 	fun_end(method_name);
 }

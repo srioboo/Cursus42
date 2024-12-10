@@ -10,9 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// TODO - completar
+#include <sys/types.h>
 
-int	ft_memcpy(int num)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	return (num);
+	unsigned int	i;
+
+	i = 0;
+	while (i < n)
+	{
+		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+		i++;
+	}
+	return (dest);
 }
