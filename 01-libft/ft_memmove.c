@@ -10,9 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// TODO - completar
+#include <sys/types.h>
 
-int	ft_memmove(int num)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	return (num);
+	char			*ptr_src;
+	char			*ptr_dest;
+	unsigned int	i;
+
+	ptr_src = (char *)src;
+	ptr_dest = (char *)dest;
+	i = 0;
+	while (i <= n)
+	{
+		ptr_dest[i] = ptr_src[i];
+		i++;
+	}
+	return (dest);
 }

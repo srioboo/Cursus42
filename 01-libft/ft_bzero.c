@@ -10,9 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// TODO - completar
+#include <sys/types.h>
 
-int	ft_bzero(int num)
+void	ft_bzero(void *s, size_t n)
 {
-	return (num);
+	char			*prt;
+	unsigned int	i;
+
+	prt = (char *)s;
+	i = 0;
+	while (i < n)
+		prt[i++] = '\0';
 }

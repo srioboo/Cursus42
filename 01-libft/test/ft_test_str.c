@@ -23,10 +23,9 @@ void	test_ft_strlen(void)
 
 	orig = strlen(test);
 	new = ft_strlen(test);
-	printf("=== TEST: ft_strlen\n");
-	printf("La cadena: [%s] tiene una longitud de: %lu\n", test, orig);
-	printf("La cadena: [%s] tiene una longitud de: %lu\n", test, new);
-	assert(orig == new);
+	fun_start(method_name);
+	printf("--- orig: %s (%lu)\n", test, orig);
+	printf("---  new: %s (%lu)\n", test, new);
 	fun_end(method_name);
 }
 
@@ -34,11 +33,20 @@ void	test_ft_strchr(void)
 {
 	const char		*method_name = "test_ft_strchr";
 	int				letter = 't';
-	char			*str = "hola mundo\0";
+	// char			*str = "hola mundo\0";
 
 	fun_start(method_name);
-	printf("original: %s\n", strchr(str, letter));
-	printf("new:      %s\n", ft_strchr(str, letter));
+	printf("--- orig: %s\n", strchr("hola mundo\0", letter));
+	printf("---  new: %s\n", ft_strchr("hola mundo\0", letter));
+	printf("=== Test1 \n");
+	printf("--- orig: %s\n", strchr("teste", 't'));
+	printf("---  new: %s\n", ft_strchr("teste", 't'));
+	printf("=== Test2 \n");
+	printf("--- orig: %s\n", strchr("teste", 'e'));
+	printf("---  new: %s\n", ft_strchr("teste", 'e'));
+	printf("=== Test3 \n");
+	printf("--- orig: %s\n", strchr("teste", '\0'));
+	printf("---  new: %s\n", ft_strchr("teste", '\0'));
 	fun_end(method_name);
 }
 
@@ -52,12 +60,10 @@ void	test_ft_strlcpy(void)
 	char			dst[35] = "And this is the destination string";
 
 	fun_start(method_name);
-	printf("original: %zu\n", strlcpy(destination, source, size));
-	printf("original dst: %s (%zu)\n", destination, ft_strlen(destination));
-	printf("new: %zu\n", ft_strlcpy(dst, src, size));
-	printf("new dst:  %s (%zu)\n", dst, ft_strlen(dst));
-	printf("orig: %zu\n", strlcpy(dst, "aaa", 0));
-	printf("new: %zu\n", ft_strlcpy(dst, "aaa", 0));
+	printf("--- orig: %zu -- %s (%zu)\n", strlcpy(destination, source, size), destination, strlen(destination));
+	printf("---  new: %zu -- %s (%zu)\n", ft_strlcpy(dst, src, size), dst, ft_strlen(dst));
+	printf("--- orig: %zu -- %s (%zu)\n", strlcpy(dst, "aaa", 0), dst, strlen(dst));
+	printf("---  new: %zu -- %s (%zu)\n", ft_strlcpy(dst, "aaa", 0), dst, ft_strlen(dst));
 	fun_end(method_name);
 }
 

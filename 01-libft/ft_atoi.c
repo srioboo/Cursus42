@@ -19,10 +19,11 @@ int	ft_atoi(const char *cton)
 	result = 0;
 	sign = 1;
 	i = 0;
-	while (cton[i] == '-' || cton[i] == '+')
+	while (cton[i] > 0 && cton[i] <= 32)
+		i++;
+	if (cton[i] == '-')
 	{
-		if (cton[i] == '-')
-			sign *= -1;
+		sign = -1;
 		i++;
 	}
 	while (cton[i] >= '0' && cton[i] <= '9')
