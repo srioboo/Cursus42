@@ -18,17 +18,25 @@ void	test_ft_strchr(void)
 	const char		*method_name = "test_ft_strchr";
 
 	fun_start(method_name);
-	// printf("--- orig: %s\n", strchr("hola mundo", 't'));
-	printf("---  new: %s\n", ft_strchr("hola mundo", 't'));
+	char *result = strchr("hola mundo", 't');
+	printf("--- orig: %s %p\n", result, (void *)result);
+	result = ft_strchr("hola mundo", 't');
+	printf("---  new: %s %p\n", result, (void *)result);
 	fun_test_header(1);
-	printf("--- orig: %s\n", strchr("teste", 't'));
-	printf("---  new: %s\n", ft_strchr("teste", 't'));
+	result = strchr("teste", 't');
+	printf("--- orig: %s %p\n", result, (void *)result);
+	result = ft_strchr("teste", 't');
+	printf("---  new: %s %p\n", result, (void *)result);
 	fun_test_header(2);
-	printf("--- orig: %s\n", strchr("teste", 'e'));
-	printf("---  new: %s\n", ft_strchr("teste", 'e'));
+	result = strchr("teste", 'e');
+	printf("--- orig: %s %p\n", result, (void *)result);
+	result = ft_strchr("teste", 'e');
+	printf("---  new: %s %p\n", result, (void *)result);
 	fun_test_header(3);
-	printf("--- orig: %s\n", strchr("teste", '\0'));
-	printf("---  new: %s\n", ft_strchr("teste", '\0'));
+	result = strchr("teste", '\0');
+	printf("--- orig: %s %p\n", result, (void *)result);
+	result = ft_strchr("teste", '\0');
+	printf("---  new: %s %p\n", result, (void *)result);
 	fun_end(method_name);
 }
 
